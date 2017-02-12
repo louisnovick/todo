@@ -1,4 +1,5 @@
 import React from 'react'
+import Controls from './Controls';
 
 export const List = () => (
   <div>
@@ -19,6 +20,9 @@ export const List = () => (
         </a>
       </li>
     </ul>
+
+    <Controls />
+
   </div>
 )
 
