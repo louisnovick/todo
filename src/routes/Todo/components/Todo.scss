@@ -1,16 +1,16 @@
-.main {
+.todo {
 }
 
-.main__list {
+.todo__list {
   margin: 0;
   padding-left: 20px;
 }
 
-.main__list-item {
+.todo__list-item {
   margin-bottom: 30px;
 }
 
-.main__list-link {
+.todo__list-link {
   color: #000;
   font-size: 24px;
   text-decoration: none;
@@ -18,7 +18,7 @@
   vertical-align: middle;
 }
 
-.main__btn {
+.todo__btn {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 15px;
@@ -29,7 +29,7 @@
   background-color: #D8D8D8;
 }
 
-.main__input {
+.todo__input {
   appearance: none;
   outline: 0;
   border: 0;

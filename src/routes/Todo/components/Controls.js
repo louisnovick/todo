@@ -2,9 +2,9 @@ import React from 'react'
 
 export const Controls = () => (
   <div>
-    <input type="text" placeholder="What needs doing?" className="main__input" />
+    <input type="text" placeholder="What needs doing?" className="todo__input" />
 
-    <a href="#" className="main__btn">
+    <a href="#" className="todo__btn">
       Clear Completed
     </a>
   </div>
