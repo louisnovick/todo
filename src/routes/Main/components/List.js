@@ -3,9 +3,21 @@ import React from 'react'
 export const List = () => (
   <div>
     <ul className="main__list">
-      <li>Take out the trash</li>
-      <li>Do the dishes</li>
-      <li>Make the bed</li>
+      <li className="main__list-item">
+        <a href="#" className="main__list-link">
+          Take out the trash
+        </a>
+      </li>
+      <li className="main__list-item">
+        <a href="#" className="main__list-link">
+          Buy groceries
+        </a>
+      </li>
+      <li className="main__list-item">
+        <a href="#" className="main__list-link">
+          Do the dishes
+        </a>
+      </li>
     </ul>
   </div>
 )
