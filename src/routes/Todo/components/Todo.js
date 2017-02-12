@@ -1,5 +1,6 @@
 import React from 'react'
 import './Todo.scss'
+import TodoItem from './TodoItem'
 
 export default class Todo extends React.Component {
   constructor(props) {
@@ -22,16 +23,15 @@ export default class Todo extends React.Component {
   }
 
   render() {
-
     return (
       <div className="todo">
         <ul className="todo__list">
           {this.props.todos.todo.map((todo, index) => (
-            <li className="todo__list-item" key={todo.id}>
-              <a href="#" className="todo__list-link">
-                {todo.text}
-              </a>
-            </li>
+            <TodoItem completed={todo.completed}
+                      text={todo.text}
+                      onClick={() => this.props.completeTodo(todo.id)}
+                      key={todo.id}
+                      />
           ))}
         </ul>
 

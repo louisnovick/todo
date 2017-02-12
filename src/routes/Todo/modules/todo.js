@@ -2,6 +2,7 @@
 // Constants
 // ------------------------------------
 export const ADD_TODO = 'ADD_TODO'
+export const COMPLETE_TODO = 'COMPLETE_TODO'
 
 // ------------------------------------
 // Actions
@@ -18,8 +19,19 @@ export function addTodo (value) {
   }
 }
 
+export function completeTodo (value) {
+  return {
+    type    : COMPLETE_TODO,
+    payload : {
+      id: value.id,
+      completed: true
+    }
+  }
+}
+
 export const actions = {
-  addTodo
+  addTodo,
+  completeTodo
 }
 
 // ------------------------------------
@@ -29,7 +41,8 @@ const ACTION_HANDLERS = {
   [ADD_TODO]    : (state, action) => [
     ...state,
     action.payload
-  ]
+  ],
+  [COMPLETE_TODO]    : (state, action) => state
 }
 
 // ------------------------------------
