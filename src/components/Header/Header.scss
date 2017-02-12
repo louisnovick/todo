@@ -1,4 +1,10 @@
-.route--active {
-  font-weight: bold;
-  text-decoration: underline;
+.header {
+  background-color: #F2F0F0;
+  padding: 20px;
+  text-align: center;
+}
+
+.header__title {
+  font-size: 30px;
+  margin: 0;
 }
