@@ -3,6 +3,7 @@
 // ------------------------------------
 export const ADD_TODO = 'ADD_TODO'
 export const TOGGLE_TODO = 'TOGGLE_TODO'
+export const CLEAR_TODOS = 'CLEAR_TODOS'
 
 // ------------------------------------
 // Actions
@@ -28,9 +29,16 @@ export function toggleTodo (value) {
   }
 }
 
+export function clearTodos () {
+  return {
+    type    : CLEAR_TODOS
+  }
+}
+
 export const actions = {
   addTodo,
-  toggleTodo
+  toggleTodo,
+  clearTodos
 }
 
 // ------------------------------------
@@ -51,7 +59,11 @@ const ACTION_HANDLERS = {
       ...todo,
       completed: !todo.completed
     };
-  })
+  }),
+
+  [CLEAR_TODOS]  : (state, action) => [
+    ...state.filter((todo, index) => todo.completed !== true)
+  ]
 
 }
 

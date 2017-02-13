@@ -7,6 +7,7 @@ export default class Todo extends React.Component {
     super(props);
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.clearCompleted = this.clearCompleted.bind(this);
   }
 
   handleSubmit(e) {
@@ -20,6 +21,11 @@ export default class Todo extends React.Component {
     } else {
       return false;
     }
+  }
+
+  clearCompleted(e) {
+    e.preventDefault();
+    this.props.clearTodos();
   }
 
   render() {
@@ -40,7 +46,7 @@ export default class Todo extends React.Component {
           <a href="#" type="submit" className="hidden"></a>
         </form>
 
-        <a href="#" className="todo__btn">
+        <a href="#" className="todo__btn" onClick={this.clearCompleted}>
           Clear Completed
         </a>
       </div>
