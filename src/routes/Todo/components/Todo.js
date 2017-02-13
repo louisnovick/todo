@@ -27,10 +27,10 @@ export default class Todo extends React.Component {
       <div className="todo">
         <ul className="todo__list">
           {this.props.todos.todo.map((todo, index) => (
-            <TodoItem completed={todo.completed}
+            <TodoItem key={todo.id}
+                      completed={todo.completed}
                       text={todo.text}
-                      onClick={() => this.props.completeTodo(todo.id)}
-                      key={todo.id}
+                      onClick={() => this.props.toggleTodo(todo.id)}
                       />
           ))}
         </ul>

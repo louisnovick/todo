@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { addTodo, completeTodo } from '../modules/todo'
+import { addTodo, toggleTodo } from '../modules/todo'
 
 /*  This is a container component. Notice it does not contain any JSX,
     nor does it import React. This component is **only** responsible for
@@ -14,7 +14,7 @@ import Todo from '../components/Todo'
 
 const mapDispatchToProps = {
   addTodo,
-  completeTodo
+  toggleTodo
 }
 
 const mapStateToProps = (state) => ({

@@ -2,7 +2,7 @@
 // Constants
 // ------------------------------------
 export const ADD_TODO = 'ADD_TODO'
-export const COMPLETE_TODO = 'COMPLETE_TODO'
+export const TOGGLE_TODO = 'TOGGLE_TODO'
 
 // ------------------------------------
 // Actions
@@ -19,30 +19,40 @@ export function addTodo (value) {
   }
 }
 
-export function completeTodo (value) {
+export function toggleTodo (value) {
   return {
-    type    : COMPLETE_TODO,
+    type    : TOGGLE_TODO,
     payload : {
-      id: value.id,
-      completed: true
+      id: value
     }
   }
 }
 
 export const actions = {
   addTodo,
-  completeTodo
+  toggleTodo
 }
 
 // ------------------------------------
 // Action Handlers
 // ------------------------------------
 const ACTION_HANDLERS = {
-  [ADD_TODO]    : (state, action) => [
+
+  [ADD_TODO]  : (state, action) => [
     ...state,
     action.payload
   ],
-  [COMPLETE_TODO]    : (state, action) => state
+
+  [TOGGLE_TODO]  : (state, action) => state.map(todo => {
+    if(todo.id !== action.payload.id) {
+      return todo;
+    }
+    return {
+      ...todo,
+      completed: !todo.completed
+    };
+  })
+
 }
 
 // ------------------------------------
