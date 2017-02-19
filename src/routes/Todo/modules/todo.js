@@ -65,6 +65,12 @@ const ACTION_HANDLERS = {
     ...state.filter((todo, index) => todo.completed !== true)
   ]
 
+  // To do
+  // To do list filter for completed items and active items
+  // Search bar
+  // Better styling, ex. highlight clear btn when there are completed todos
+  // Set due date
+  // Move to home route
 }
 
 // ------------------------------------
